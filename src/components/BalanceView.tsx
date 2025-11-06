@@ -75,7 +75,6 @@ function BalanceView() {
           <p className="text-xs mb-5 text-gray-500">Minimum transactions to settle all debts</p>
           {simplifiedDebts.map((d, idx) => (
             <p key={idx} className="text-blue-800 text-sm">
-              {/* {d.from} → {d.to}: <strong>${d.amount.toFixed(2)}</strong> */}
               <div 
               className="flex justify-between text-md font-bold items-center px-3 py-3 mb-2 rounded-md border transition-all hover:translate-x-1"
               >

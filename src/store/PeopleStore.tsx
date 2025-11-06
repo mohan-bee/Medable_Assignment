@@ -61,6 +61,6 @@ export const PeopleProvider = ({
 
 export const usePeople = () => {
   const ctx = useContext(PeopleContext)  
-  if (!ctx) throw new Error("usePeople must be used inside PeopleProvider")  
+  if (!ctx) throw new Error("people context must be inside the PeopleProvider")  
   return ctx  
 }  

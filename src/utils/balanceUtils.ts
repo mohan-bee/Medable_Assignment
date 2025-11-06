@@ -50,8 +50,7 @@ export function simplifyDebts(balances: Record<string, number>) {
   creditors.sort((a, b) => b.amount - a.amount);
   debtors.sort((a, b) => b.amount - a.amount);
 
-  let i = 0,
-    j = 0;
+  let i = 0, j = 0;
 
   while (i < debtors.length && j < creditors.length) {
     const pay = Math.min(debtors[i].amount, creditors[j].amount);

@@ -6,7 +6,7 @@ import { usePeople } from '../store/PeopleStore';
 
 function PeopleManager() {
   const people = initialPeople;
-  const { state, dispatch } = usePeople();
+  const { state: peopleState, dispatch } = usePeople();
   const [name, setName] = useState("");
 
   const addPerson = (e: any) => {
@@ -45,7 +45,7 @@ function PeopleManager() {
 
       <div className="mt-4">
         <h3 className="text-gray-600 my-2 text-lg">
-          Current Members ({state.people.length})
+          Current Members ({peopleState.people.length})
         </h3>
         {people.length === 0 ? (
           <p className="text-center text-gray-400 py-8 italic">
@@ -53,7 +53,7 @@ function PeopleManager() {
           </p>
         ) : (
           <ul className="list-none mt-2">
-            {state.people.map((person, index) => (
+            {peopleState.people.map((person, index) => (
               <li
                 key={index}
                 className="flex justify-between items-center p-2 mb-1 bg-gray-50 rounded transition-colors hover:bg-gray-100"
@@ -71,7 +71,7 @@ function PeopleManager() {
         )}
       </div>
 
-      {state.people.length < 2 && (
+      {peopleState.people.length < 2 && (
         <p className="bg-red-100 text-red-900 px-3 py-3 rounded-md mt-4 flex items-center gap-2">
           ⚠️ Add at least 2 people to start tracking expenses
         </p>

@@ -1,10 +1,6 @@
 import React, { createContext, useReducer, useContext, ReactNode } from "react";
 import { Expense } from "../types";
 
-// ----------------------
-// TYPES
-// ----------------------
-
 interface ExpenseState {
   expenses: Expense[];
 }
@@ -48,9 +44,6 @@ const ExpenseContext = createContext<{
   dispatch: React.Dispatch<ExpenseAction>;
 } | null>(null);
 
-// ----------------------
-// PROVIDER
-// ----------------------
 
 export const ExpenseProvider = ({
   children,
@@ -73,6 +66,6 @@ export const ExpenseProvider = ({
 
 export const useExpenses = () => {
   const ctx = useContext(ExpenseContext);
-  if (!ctx) throw new Error("useExpenses must be used inside ExpenseProvider");
+  if (!ctx) throw new Error("expense context must be inside the ExpenseProvider");
   return ctx;
 };

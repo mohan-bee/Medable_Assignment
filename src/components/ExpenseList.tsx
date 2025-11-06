@@ -39,7 +39,6 @@ function ExpenseList() {
 
             return (
               <div key={expense.id} className="mb-4">
-                {/* Summary row */}
                 <div
                   onClick={() => toggleOverview(expense.id)}
                   className={`p-4 flex justify-between items-center cursor-pointer transition-colors ${
@@ -70,7 +69,6 @@ function ExpenseList() {
                   </div>
                 </div>
 
-                {/* Expanded Overview */}
                 {isOpen && (
                   <div className="mt-2 bg-white rounded-lg shadow-sm p-4 border border-gray-200">
                     <h2 className="text-lg font-semibold mb-3">
